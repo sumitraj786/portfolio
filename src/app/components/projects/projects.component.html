@@ -1,0 +1,37 @@
+<section class="py-10">
+  <h2 class="text-3xl font-extrabold text-center text-gray-800 dark:text-white mb-8">
+    <i class="fa-solid fa-diagram-project text-cyan-500 mr-2"></i> Projects
+  </h2>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <ng-container *ngFor="let p of projects">
+      <!-- If project has a URL, make the whole card clickable -->
+      <a *ngIf="p.url" [href]="p.url" target="_blank" rel="noopener noreferrer"
+         class="project-card block bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-xl p-6 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
+        <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-100 flex items-center gap-2">
+          <i class="fa-solid fa-code-branch text-cyan-500"></i>{{ p.title }}
+        </h3>
+        <ul class="mt-3 list-disc list-inside text-sm text-gray-700 dark:text-gray-300 space-y-1">
+          <li *ngFor="let b of p.bullets">{{ b }}</li>
+        </ul>
+        <div class="mt-4 text-xs text-gray-500 flex items-center gap-1">
+          <i class="fa-solid fa-microchip text-cyan-400"></i> {{ p.tech }}
+        </div>
+      </a>
+
+      <!-- If no URL, just render the card normally -->
+      <div *ngIf="!p.url"
+           class="project-card bg-gradient-to-br from-white to-gray-50 dark:from-gray-800 dark:to-gray-900 rounded-xl p-6 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300">
+        <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-100 flex items-center gap-2">
+          <i class="fa-solid fa-code-branch text-cyan-500"></i>{{ p.title }}
+        </h3>
+        <ul class="mt-3 list-disc list-inside text-sm text-gray-700 dark:text-gray-300 space-y-1">
+          <li *ngFor="let b of p.bullets">{{ b }}</li>
+        </ul>
+        <div class="mt-4 text-xs text-gray-500 flex items-center gap-1">
+          <i class="fa-solid fa-microchip text-cyan-400"></i> {{ p.tech }}
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</section>

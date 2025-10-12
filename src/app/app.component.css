@@ -1,0 +1,95 @@
+/* ---------------- LEFT NAVIGATION ---------------- */
+.nav-item {
+  @apply flex items-center justify-center w-12 h-12 rounded-xl text-gray-500 dark:text-gray-300
+         transition-all duration-300 hover:bg-cyan-500 hover:text-white shadow-md hover:shadow-xl cursor-pointer;
+}
+
+.nav-item.active {
+  @apply bg-cyan-500 text-white shadow-lg;
+  transform: scale(1.1);
+}
+
+.nav-item[title]:hover::after {
+  content: attr(title);
+  @apply absolute left-16 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900
+         text-xs font-medium px-2 py-1 rounded-md whitespace-nowrap shadow-lg;
+}
+
+html { scroll-behavior: smooth; }
+
+/* ---------------- RIGHT FLOATING TECH PANEL ---------------- */
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: start;
+  pointer-events: none;
+  position: fixed;
+  top: 20%;
+  right: 0;
+  width: 12rem;
+  z-index: 40;
+}
+
+.tech-badge {
+  @apply bg-cyan-500 bg-opacity-60 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md relative z-10 mb-2;
+  animation: floatTech 8s ease-in-out infinite;
+  opacity: 0.8; /* slightly transparent */
+  transform: rotate(calc(-5deg + 10deg * var(--i)));
+}
+
+/* Floating Animation for badges */
+@keyframes floatTech {
+  0% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-8px) rotate(5deg); }
+  50% { transform: translateY(8px) rotate(-5deg); }
+  75% { transform: translateY(-4px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+/* Stagger Animation Delays for badges */
+.right-panel .tech-badge:nth-child(1) { animation-delay: 0s; }
+.right-panel .tech-badge:nth-child(2) { animation-delay: 0.2s; }
+.right-panel .tech-badge:nth-child(3) { animation-delay: 0.4s; }
+.right-panel .tech-badge:nth-child(4) { animation-delay: 0.6s; }
+.right-panel .tech-badge:nth-child(5) { animation-delay: 0.8s; }
+.right-panel .tech-badge:nth-child(6) { animation-delay: 1s; }
+.right-panel .tech-badge:nth-child(7) { animation-delay: 1.2s; }
+.right-panel .tech-badge:nth-child(8) { animation-delay: 1.4s; }
+.right-panel .tech-badge:nth-child(9) { animation-delay: 1.6s; }
+.right-panel .tech-badge:nth-child(10) { animation-delay: 1.8s; }
+.right-panel .tech-badge:nth-child(11) { animation-delay: 2s; }
+.right-panel .tech-badge:nth-child(12) { animation-delay: 2.2s; }
+.right-panel .tech-badge:nth-child(13) { animation-delay: 2.4s; }
+.right-panel .tech-badge:nth-child(14) { animation-delay: 2.6s; }
+.right-panel .tech-badge:nth-child(15) { animation-delay: 2.8s; }
+.right-panel .tech-badge:nth-child(16) { animation-delay: 3s; }
+.right-panel .tech-badge:nth-child(17) { animation-delay: 3.2s; }
+.right-panel .tech-badge:nth-child(18) { animation-delay: 3.4s; }
+.right-panel .tech-badge:nth-child(19) { animation-delay: 3.6s; }
+.right-panel .tech-badge:nth-child(20) { animation-delay: 3.8s; }
+.right-panel .tech-badge:nth-child(21) { animation-delay: 4s; }
+.right-panel .tech-badge:nth-child(22) { animation-delay: 4.2s; }
+.right-panel .tech-badge:nth-child(23) { animation-delay: 4.4s; }
+.right-panel .tech-badge:nth-child(24) { animation-delay: 4.6s; }
+.right-panel .tech-badge:nth-child(25) { animation-delay: 4.8s; }
+.right-panel .tech-badge:nth-child(26) { animation-delay: 5s; }
+.right-panel .tech-badge:nth-child(27) { animation-delay: 5.2s; }
+.right-panel .tech-badge:nth-child(28) { animation-delay: 5.4s; }
+.right-panel .tech-badge:nth-child(29) { animation-delay: 5.6s; }
+.right-panel .tech-badge:nth-child(30) { animation-delay: 5.8s; }
+.right-panel .tech-badge:nth-child(31) { animation-delay: 6s; }
+.right-panel .tech-badge:nth-child(32) { animation-delay: 6.2s; }
+.right-panel .tech-badge:nth-child(33) { animation-delay: 6.4s; }
+.right-panel .tech-badge:nth-child(34) { animation-delay: 6.6s; }
+.right-panel .tech-badge:nth-child(35) { animation-delay: 6.8s; }
+.right-panel .tech-badge:nth-child(36) { animation-delay: 7s; }
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 1024px) {
+  nav { 
+    @apply flex-row w-full h-16 bottom-0 top-auto left-0 right-0 py-0 space-x-6 px-6;
+  }
+  .nav-item[title]:hover::after { @apply hidden; }
+  .right-panel { display: none; }
+}

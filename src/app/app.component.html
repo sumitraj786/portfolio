@@ -1,0 +1,85 @@
+<div class="relative w-full h-auto bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 overflow-x-hidden">
+
+  <!-- Particle Canvas (full page) -->
+  <canvas id="pageParticles" class="absolute top-0 left-0 w-full h-full z-0"></canvas>
+
+  <!-- Left Navigation -->
+  <nav class="fixed left-0 top-0 h-full w-20 bg-white dark:bg-gray-800 shadow-lg flex flex-col items-center py-6 space-y-6 z-50">
+    <a href="#hero" class="nav-item" title="Hero" [class.active]="activeSection === 'hero'">
+      <i class="fa-solid fa-user fa-lg"></i>
+    </a>
+    <a href="#about" class="nav-item" title="About Me" [class.active]="activeSection === 'about'">
+      <i class="fa-solid fa-circle-info fa-lg"></i>
+    </a>
+    <a href="#projects" class="nav-item" title="Projects" [class.active]="activeSection === 'projects'">
+      <i class="fa-solid fa-diagram-project fa-lg"></i>
+    </a>
+    <a href="#experience" class="nav-item" title="Experience" [class.active]="activeSection === 'experience'">
+      <i class="fa-solid fa-briefcase fa-lg"></i>
+    </a>
+    <a href="#contact" class="nav-item" title="Contact" [class.active]="activeSection === 'contact'">
+      <i class="fa-solid fa-envelope fa-lg"></i>
+    </a>
+  </nav>
+
+  <!-- Right-side Floating Tech Panel -->
+  <div class="right-panel fixed top-1/4 right-0 w-48 flex flex-col items-center justify-start pointer-events-none z-40 space-y-2">
+    <!-- Programming Languages -->
+    <span class="tech-badge">Java</span>
+    <span class="tech-badge">Python</span>
+    <span class="tech-badge">SQL</span>
+    <span class="tech-badge">MongoDB</span>
+    <span class="tech-badge">JavaScript</span>
+    <span class="tech-badge">TypeScript</span>
+    <span class="tech-badge">HTML</span>
+    <span class="tech-badge">CSS</span>
+    <span class="tech-badge">PostgreSQL</span>
+    <span class="tech-badge">Dart</span>
+
+    <!-- Frameworks & Tools -->
+    <span class="tech-badge">Spring Boot</span>
+    <span class="tech-badge">Hibernate</span>
+    <span class="tech-badge">Spring Data JPA</span>
+    <span class="tech-badge">JUnit</span>
+    <span class="tech-badge">Mockito</span>
+    <span class="tech-badge">Angular</span>
+    <span class="tech-badge">Angular JS</span>
+    <span class="tech-badge">Flutter</span>
+
+    <!-- DevOps & Tools -->
+    <span class="tech-badge">GitLab CI/CD</span>
+    <span class="tech-badge">Git</span>
+    <span class="tech-badge">Jira</span>
+    <span class="tech-badge">Jenkins</span>
+    <span class="tech-badge">Docker</span>
+    <span class="tech-badge">SonarQube</span>
+    <span class="tech-badge">Postman API</span>
+    <span class="tech-badge">Oracle SQL Developer</span>
+    <span class="tech-badge">Kafka</span>
+    <span class="tech-badge">GitHub Copilot</span>
+    <span class="tech-badge">Kibana</span>
+
+    <!-- Concepts -->
+    <span class="tech-badge">Data Structures & Algorithms</span>
+    <span class="tech-badge">System Design</span>
+    <span class="tech-badge">OOPS</span>
+    <span class="tech-badge">Machine Learning</span>
+    <span class="tech-badge">Deep Learning</span>
+    <span class="tech-badge">AI</span>
+    <span class="tech-badge">Prompt Engineering</span>
+    <span class="tech-badge">Software Dev Concepts</span>
+  </div>
+
+  <!-- Main Content Sections -->
+  <div class="ml-20 relative z-10">
+    <section id="hero" class="min-h-screen py-0"><app-hero></app-hero></section>
+    <section id="about" class="min-h-screen py-0"><app-about></app-about></section>
+    <section id="projects" class="min-h-screen py-0"><app-projects></app-projects></section>
+    <section id="experience" class="min-h-screen py-0"><app-experience></app-experience></section>
+    <section id="contact" class="min-h-screen py-0"><app-contact></app-contact></section>
+
+    <footer class="mt-8 text-center text-sm text-gray-500 dark:text-gray-400">
+      © {{ currentYear }} Sumit Raj. Built with Passion and Creativity.
+    </footer>
+  </div>
+</div>
