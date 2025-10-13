@@ -22,7 +22,7 @@ html { scroll-behavior: smooth; }
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: start;
+  justify-content: flex-start;
   pointer-events: none;
   position: fixed;
   top: 20%;
