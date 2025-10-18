@@ -29,7 +29,7 @@ export class ExperienceComponent {
         'Designed and implemented an optimized heap data structure in Java for the shipping department, improving logistics data handling efficiency by ~1.3x faster and reducing processing overhead.',
         'Engineered a comprehensive entity-relationship (ER) diagram to design a robust database for the pet department, ensuring scalability and alignment with all business requirements.'
       ],
-      logo: 'assets/experience/WALMART_logo.png'
+      logo: 'assets/experience/walmart_global_logo.png'
     }
   ];
 }
