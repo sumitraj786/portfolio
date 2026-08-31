@@ -22,7 +22,7 @@ export class ExperienceComponent {
     {
       role: 'Software Engineer Intern',
       company: 'Walmart Global Tech',
-      period: 'Nov 2023 - Jan 2024',
+      period: 'Nov 2023 - Mar 2024',
       location: 'Bengaluru',
       bullets: [
         'Completed the Advanced Software Engineering internship at Walmart, delivering high-impact technical solutions across multiple teams.',

@@ -1,85 +1,45 @@
-<div class="relative w-full h-auto bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 overflow-x-hidden">
+<div class="relative w-full min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 overflow-x-hidden">
 
-  <!-- Particle Canvas (full page) -->
-  <canvas id="pageParticles" class="absolute top-0 left-0 w-full h-full z-0"></canvas>
-
-  <!-- Left Navigation -->
-  <nav class="fixed left-0 top-0 h-full w-20 bg-white dark:bg-gray-800 shadow-lg flex flex-col items-center py-6 space-y-6 z-50">
-    <a href="#hero" class="nav-item" title="Hero" [class.active]="activeSection === 'hero'">
-      <i class="fa-solid fa-user fa-lg"></i>
-    </a>
-    <a href="#about" class="nav-item" title="About Me" [class.active]="activeSection === 'about'">
-      <i class="fa-solid fa-circle-info fa-lg"></i>
-    </a>
-    <a href="#projects" class="nav-item" title="Projects" [class.active]="activeSection === 'projects'">
-      <i class="fa-solid fa-diagram-project fa-lg"></i>
-    </a>
-    <a href="#experience" class="nav-item" title="Experience" [class.active]="activeSection === 'experience'">
-      <i class="fa-solid fa-briefcase fa-lg"></i>
-    </a>
-    <a href="#contact" class="nav-item" title="Contact" [class.active]="activeSection === 'contact'">
-      <i class="fa-solid fa-envelope fa-lg"></i>
-    </a>
+  <!-- Top Navigation -->
+  <nav class="fixed top-0 left-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm z-50 transition-all duration-300">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex-shrink-0 font-bold text-xl tracking-tight text-cyan-600 dark:text-cyan-400">
+          Sumit Raj
+        </div>
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-6">
+            <a href="#hero" class="hover:text-cyan-500 transition-colors px-3 py-2 rounded-md text-sm font-medium" [class.text-cyan-600]="activeSection === 'hero'">Home</a>
+            <a href="#about" class="hover:text-cyan-500 transition-colors px-3 py-2 rounded-md text-sm font-medium" [class.text-cyan-600]="activeSection === 'about'">About</a>
+            <a href="#projects" class="hover:text-cyan-500 transition-colors px-3 py-2 rounded-md text-sm font-medium" [class.text-cyan-600]="activeSection === 'projects'">Projects</a>
+            <a href="#experience" class="hover:text-cyan-500 transition-colors px-3 py-2 rounded-md text-sm font-medium" [class.text-cyan-600]="activeSection === 'experience'">Experience</a>
+            <a href="#contact" class="hover:text-cyan-500 transition-colors px-3 py-2 rounded-md text-sm font-medium" [class.text-cyan-600]="activeSection === 'contact'">Contact</a>
+          </div>
+        </div>
+        <!-- Mobile menu button (can be extended with JS toggle if needed, keeping simple for now) -->
+        <div class="md:hidden flex items-center space-x-2 text-sm">
+           <a href="#about"><i class="fa-solid fa-user"></i></a>
+           <a href="#projects"><i class="fa-solid fa-code-branch"></i></a>
+           <a href="#experience"><i class="fa-solid fa-briefcase"></i></a>
+        </div>
+      </div>
+    </div>
   </nav>
 
-  <!-- Right-side Floating Tech Panel -->
-  <div class="right-panel fixed top-1/4 right-0 w-48 flex flex-col items-center justify-start pointer-events-none z-40 space-y-2">
-    <!-- Programming Languages -->
-    <span class="tech-badge">Java</span>
-    <span class="tech-badge">Python</span>
-    <span class="tech-badge">SQL</span>
-    <span class="tech-badge">MongoDB</span>
-    <span class="tech-badge">JavaScript</span>
-    <span class="tech-badge">TypeScript</span>
-    <span class="tech-badge">HTML</span>
-    <span class="tech-badge">CSS</span>
-    <span class="tech-badge">PostgreSQL</span>
-    <span class="tech-badge">Dart</span>
+  <!-- Main Content Container -->
+  <div class="pt-20 pb-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="hero" class="min-h-[90vh] flex items-center py-10"><app-hero class="w-full"></app-hero></section>
+    
+    <div class="space-y-32">
+      <section id="about" class="scroll-mt-24"><app-about></app-about></section>
+      <section id="projects" class="scroll-mt-24"><app-projects></app-projects></section>
+      <section id="experience" class="scroll-mt-24"><app-experience></app-experience></section>
+      <section id="contact" class="scroll-mt-24"><app-contact></app-contact></section>
+    </div>
 
-    <!-- Frameworks & Tools -->
-    <span class="tech-badge">Spring Boot</span>
-    <span class="tech-badge">Hibernate</span>
-    <span class="tech-badge">Spring Data JPA</span>
-    <span class="tech-badge">JUnit</span>
-    <span class="tech-badge">Mockito</span>
-    <span class="tech-badge">Angular</span>
-    <span class="tech-badge">Angular JS</span>
-    <span class="tech-badge">Flutter</span>
-
-    <!-- DevOps & Tools -->
-    <span class="tech-badge">GitLab CI/CD</span>
-    <span class="tech-badge">Git</span>
-    <span class="tech-badge">Jira</span>
-    <span class="tech-badge">Jenkins</span>
-    <span class="tech-badge">Docker</span>
-    <span class="tech-badge">SonarQube</span>
-    <span class="tech-badge">Postman API</span>
-    <span class="tech-badge">Oracle SQL Developer</span>
-    <span class="tech-badge">Kafka</span>
-    <span class="tech-badge">GitHub Copilot</span>
-    <span class="tech-badge">Kibana</span>
-
-    <!-- Concepts -->
-    <span class="tech-badge">Data Structures & Algorithms</span>
-    <span class="tech-badge">System Design</span>
-    <span class="tech-badge">OOPS</span>
-    <span class="tech-badge">Machine Learning</span>
-    <span class="tech-badge">Deep Learning</span>
-    <span class="tech-badge">AI</span>
-    <span class="tech-badge">Prompt Engineering</span>
-    <span class="tech-badge">Software Dev Concepts</span>
-  </div>
-
-  <!-- Main Content Sections -->
-  <div class="ml-20 relative z-10">
-    <section id="hero" class="min-h-screen py-0"><app-hero></app-hero></section>
-    <section id="about" class="min-h-screen py-0"><app-about></app-about></section>
-    <section id="projects" class="min-h-screen py-0"><app-projects></app-projects></section>
-    <section id="experience" class="min-h-screen py-0"><app-experience></app-experience></section>
-    <section id="contact" class="min-h-screen py-0"><app-contact></app-contact></section>
-
-    <footer class="mt-8 text-center text-sm text-gray-500 dark:text-gray-400">
-      © {{ currentYear }} Sumit Raj. Built with Passion and Creativity.
+    <footer class="mt-20 pt-8 border-t border-gray-200 dark:border-gray-800 text-center text-sm text-gray-500 dark:text-gray-400">
+      <p>© {{ currentYear }} Sumit Raj. Built with Passion and Precision.</p>
     </footer>
   </div>
+
 </div>
